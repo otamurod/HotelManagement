@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/hotel_layout_bg"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hotel_layout_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/tourist_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/sf_pro_display"
+            android:text="@string/first_tourist"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <!-- Icon for Expand/Collapse -->
+        <ImageView
+            android:id="@+id/expandIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:src="@drawable/ic_expand" />
+
+    </LinearLayout>
+
+    <!-- Expandable Content -->
+    <LinearLayout
+        android:id="@+id/expandableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buyer_layout_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/name"
+                android:textColor="@color/grey_400"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tourist_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="Ivan"
+                android:textColor="#14142B"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buyer_layout_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/surname"
+                android:textColor="@color/grey_400"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tourist_surname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="Ivanov"
+                android:textColor="@color/black_600"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buyer_layout_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/date_of_birth"
+                android:textColor="@color/grey_400"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/date_of_birth"
+                android:textColor="@color/black_600"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buyer_layout_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/citizenship"
+                android:textColor="@color/grey_400"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/citizenship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/citizenship"
+                android:textColor="@color/black_600"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buyer_layout_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/passport_number"
+                android:textColor="@color/grey_400"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/passport_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/passport_number"
+                android:textColor="@color/black_600"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/buyer_layout_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/passport_validity_period"
+                android:textColor="@color/grey_400"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/passport_validity_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="@string/passport_validity_period"
+                android:textColor="@color/black_600"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

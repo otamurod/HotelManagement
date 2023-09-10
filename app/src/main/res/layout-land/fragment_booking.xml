@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.booking.BookingFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarPopupTheme">
+
+            <ImageView
+                android:id="@+id/navigate_back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_back" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sf_pro_display"
+                android:gravity="center"
+                android:text="@string/booking"
+                android:textColor="@color/black"
+                android:textFontWeight="500"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F4F3F7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="MissingConstraints">
+
+                <include layout="@layout/shimmer_placeholder_layout"></include>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <LinearLayout
+                android:id="@+id/hotel_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/hotel_layout_bg">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/hotel_star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/hotel_star_bg"
+                        android:drawableLeft="@drawable/ic_star"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/_5_perfect"
+                        android:textColor="#FFA800"
+                        android:textFontWeight="500"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/hotel_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="16dp"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:text="@string/sample_hotel_name"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/hotel_star" />
+
+                    <TextView
+                        android:id="@+id/hotel_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:text="@string/madinat_makadi_madinat_road_madinat_bay_precinct"
+                        android:textColor="@color/blue_500"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/hotel_name" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/booking_data_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/hotel_layout_bg"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- Row 1 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/departure_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/departure"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/departure"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="@string/saint_petersburg"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                    <!-- Row 2 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/country_city_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/country_city"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/country"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="@string/egypt_hurghada"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                    <!-- Row 3 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/dates_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/dates"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/dates"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="@string/days"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                    <!-- Row 4 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/nights_number_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/number_of_nights"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/nights_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="@string/_7_nights"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                    <!-- Row 5 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/hotel_name_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/hotel"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/hotel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="@string/sample_hotel_name"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                    <!-- Row 6 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/number_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/number"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="@string/hotel_view"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                    <!-- Row 7 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/nutrition_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/nutrition"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/nutrition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="@string/all_inclusive"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buyer_info_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/hotel_layout_bg"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display"
+                    android:text="@string/buyer_info"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/buyer_layout_bg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:text="@string/phone_number"
+                        android:textColorHint="#A9ABB7"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/buyer_phone_number_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:hint="@string/mask"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:textColor="#14142B"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/buyer_layout_bg"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/errorTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:text="@string/email_label"
+                        android:textColor="@color/grey_400"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/buyer_email_address_edit_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:hint="@string/email_sample"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:textColor="#14142B"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/fill_buyer_details_error_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/sf_pro_display"
+                    android:text="@string/fill_all_fields"
+                    android:textAlignment="center"
+                    android:textColor="@color/error_color"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/sf_pro_display"
+                    android:text="@string/user_privacy_sample"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/add_first_tourist_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/hotel_layout_bg"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/add_tourist1_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display"
+                    android:gravity="center"
+                    android:text="@string/first_tourist"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/add_tourist1_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_expand"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/add_tourist1_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/add_tourist1_label"
+                    app:layout_constraintTop_toBottomOf="@id/add_tourist1_label">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tourist1_name_edit_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/name"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tourist1_surname_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/surname"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tourist1_birthday_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/date_of_birth"
+                            android:inputType="date"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tourist1_citizenship_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/citizenship"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tourist1_passport_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/passport_number"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tourist1_passport_validity_period"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/passport_validity_period"
+                            android:inputType="date"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_tourist1_error_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:text="@string/fill_all_fields"
+                        android:textAlignment="center"
+                        android:textColor="@color/error_color"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/add_tourist1_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/primary_button_bg"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:text="@string/add_tourist"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tourist_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_tourist" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/hotel_layout_bg"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/add_tourist_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf_pro_display"
+                    android:gravity="center"
+                    android:text="@string/add_tourist"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/add_tourist_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/add_tourist_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/add_tourist_label"
+                    app:layout_constraintTop_toBottomOf="@id/add_tourist_label">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tourist_name_edit_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/name"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/tourist_surname_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/surname"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/birthday_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/date_of_birth"
+                            android:inputType="date"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/citizenship_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/citizenship"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/passport_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/passport_number"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/buyer_layout_bg"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/passport_validity_period"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/buyer_layout_bg"
+                            android:fontFamily="@font/sf_pro_display"
+                            android:hint="@string/passport_validity_period"
+                            android:inputType="date"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:textColorHint="#A9ABB7"
+                            android:textSize="17sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/add_tourist_error_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:text="@string/fill_all_fields"
+                        android:textAlignment="center"
+                        android:textColor="@color/error_color"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/add_tourist_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/primary_button_bg"
+                        android:fontFamily="@font/sf_pro_display"
+                        android:text="@string/add_tourist"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/total_price_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/hotel_layout_bg"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- Row 1 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/tour_price_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/tour"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/tour_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="186 600 ₽"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                    <!-- Row 2 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/fuel_price_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/fuel_surcharge"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/fuel_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="9 300 ₽"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                    <!-- Row 3 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/service_fee_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/service_fee"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/service_fee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="2 136 ₽"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                    <!-- Row 4 -->
+                    <TableRow>
+                        <!-- Column 1 -->
+                        <TextView
+                            android:id="@+id/total_price_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/to_pay"
+                            android:textColor="@color/grey"
+                            android:textSize="16sp" />
+
+                        <!-- Column 2 -->
+                        <TextView
+                            android:id="@+id/total_cost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:padding="8dp"
+                            android:text="198 036 ₽"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/blue_500"
+                            android:textSize="16sp" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/payment_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/primary_button_bg"
+                    android:fontFamily="@font/sf_pro_display"
+                    android:text="@string/payment"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
