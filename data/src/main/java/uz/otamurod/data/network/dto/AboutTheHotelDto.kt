@@ -1,11 +1,13 @@
-package uz.otamurod.domain.model
+package uz.otamurod.data.network.dto
 
 import android.os.Parcelable
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
+@Keep
 @Parcelize
-data class AboutTheHotel(
+data class AboutTheHotelDto(
     @SerializedName("description")
     val description: String,
 

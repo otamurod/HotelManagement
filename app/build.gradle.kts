@@ -9,9 +9,15 @@ plugins {
     id("dagger.hilt.android.plugin")
 }
 
+repositories {
+    google()
+    gradlePluginPortal()
+    mavenCentral()
+}
+
 android {
     namespace = Config.packageNameApp
-    compileSdkVersion(Config.Sdk.compile)
+    compileSdk = 34
 
     defaultConfig {
         applicationId = Config.applicationId
@@ -42,11 +48,22 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
 dependencies {
+    api(fileTree("libs") { include("*.jar") })
+
+    // Inject Data Layer
+    implementation(project(mapOf("path" to ":data")))
+
+    // Inject Domain Layer
+    implementation(project(mapOf("path" to ":domain")))
+
+    // Inject Presentation Layer
+    implementation(project(mapOf("path" to ":presentation")))
+
     // AndroidX
     implementation(Lib.AndroidX.coreKtx)
     implementation(Lib.AndroidX.appCompat)

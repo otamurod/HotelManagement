@@ -1,7 +1,9 @@
+import uz.otamurod.buildsrc.Config
 import uz.otamurod.buildsrc.Lib
 
 plugins {
-    id("kotlin")
+    id("com.android.library")
+    id("kotlin-parcelize")
 }
 
 repositories {
@@ -10,11 +12,21 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    // Dagger - Hilt
-    implementation(Lib.DaggerHilt.android)
-    implementation(Lib.DaggerHilt.hiltNavigationFragment)
+android {
+    namespace = Config.packageNameLibDomain
+    compileSdk = Config.Sdk.compile
+}
 
+dependencies {
     // Testing
     testImplementation(Lib.Testing.junit)
+
+    // Kotlin Coroutines
+    implementation(Lib.Coroutines.core)
+    implementation(Lib.Coroutines.android)
+
+    // Retrofit
+    implementation(Lib.Retrofit.retrofit)
+    implementation(Lib.Retrofit.converterGson)
+    implementation(Lib.Retrofit.loggingInterceptor)
 }

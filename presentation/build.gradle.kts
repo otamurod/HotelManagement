@@ -9,9 +9,15 @@ plugins {
     id("dagger.hilt.android.plugin")
 }
 
+repositories {
+    google()
+    gradlePluginPortal()
+    mavenCentral()
+}
+
 android {
     namespace = Config.packageNameLibPresentation
-    compileSdkVersion(Config.Sdk.compile)
+    compileSdk = Config.Sdk.compile
 
     defaultConfig {
         applicationId = Config.applicationId
@@ -43,11 +49,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
 dependencies {
+    // Inject Domain Layer
+    implementation(project(mapOf("path" to ":domain")))
+
     // AndroidX
     implementation(Lib.AndroidX.coreKtx)
     implementation(Lib.AndroidX.appCompat)
@@ -102,6 +111,9 @@ dependencies {
 
     // CarouselView
     implementation(Lib.CarouselView.carouselView)
+
+    // Rounded ImageView
+    implementation(Lib.RoundedImageView.roundedImageView)
 
     // Shimmer effect
     implementation(Lib.Shimmer.shimmer)

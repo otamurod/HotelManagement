@@ -9,6 +9,12 @@ plugins {
     id("dagger.hilt.android.plugin")
 }
 
+repositories {
+    google()
+    gradlePluginPortal()
+    mavenCentral()
+}
+
 android {
     compileSdkVersion(Config.Sdk.compile)
     defaultConfig {
@@ -17,6 +23,9 @@ android {
 }
 
 dependencies {
+    // Inject Domain Layer
+    implementation(project(mapOf("path" to ":domain")))
+
     // AndroidX
     implementation(Lib.AndroidX.coreKtx)
     implementation(Lib.AndroidX.appCompat)

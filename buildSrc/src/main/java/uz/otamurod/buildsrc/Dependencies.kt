@@ -39,8 +39,8 @@ object Lib {
         private const val version = "2.47"
         const val android = "com.google.dagger:hilt-android:$version"
         const val hiltNavigationFragment = "androidx.hilt:hilt-navigation-fragment:1.0.0"
-        const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:$version"
-        const val hiltCompiler = "androidx.hilt:hilt-compiler:1.0.0"
+        const val hiltAndroidCompiler:String = "com.google.dagger:hilt-android-compiler:$version"
+        const val hiltCompiler:String = "androidx.hilt:hilt-compiler:1.0.0"
     }
 
     object Coroutines {
@@ -75,6 +75,10 @@ object Lib {
     object CarouselView {
         private const val version = "0.1.4"
         const val carouselView = "com.synnapps:carouselview:$version"
+    }
+    object RoundedImageView {
+        private const val version = "2.2.1"
+        const val roundedImageView = "com.makeramen:roundedimageview:$version"
     }
 
     object Shimmer {

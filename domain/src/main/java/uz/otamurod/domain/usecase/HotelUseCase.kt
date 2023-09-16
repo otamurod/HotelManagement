@@ -1,7 +1,6 @@
 package uz.otamurod.domain.usecase
 
 import kotlinx.coroutines.flow.Flow
-import retrofit2.Response
 import uz.otamurod.domain.model.Booking
 import uz.otamurod.domain.model.Hotel
 import uz.otamurod.domain.model.HotelResponse
