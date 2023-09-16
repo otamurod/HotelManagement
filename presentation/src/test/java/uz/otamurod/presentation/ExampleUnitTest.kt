@@ -1,4 +1,4 @@
-package uz.otamurod.domain
+package uz.otamurod.presentation
 
 import org.junit.Test
 

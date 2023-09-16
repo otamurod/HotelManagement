@@ -13,10 +13,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NumberViewModel @Inject constructor(
-    private val hotelUseCase: HotelUseCase
+    private val hotelUseCase: uz.otamurod.domain.usecase.HotelUseCase
 ) : ViewModel() {
-    private val _rooms = MutableLiveData<HotelResponse<Rooms>>()
-    val rooms: LiveData<HotelResponse<Rooms>> = _rooms
+    private val _rooms = MutableLiveData<uz.otamurod.domain.model.HotelResponse<uz.otamurod.domain.model.Rooms>>()
+    val rooms: LiveData<uz.otamurod.domain.model.HotelResponse<uz.otamurod.domain.model.Rooms>> = _rooms
 
     init {
         fetchHotelRooms()

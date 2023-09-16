@@ -12,21 +12,21 @@ class HotelRemoteDataSource @Inject constructor(
     private val apiService: ApiService, retrofit: Retrofit
 ) : BaseRemoteDataSource(retrofit) {
 
-    suspend fun fetchHotel(): HotelResponse<Hotel> {
+    suspend fun fetchHotel(): uz.otamurod.domain.model.HotelResponse<uz.otamurod.domain.model.Hotel> {
         return getResponse(
             request = { apiService.getHotel() },
             defaultErrorMessage = "Error fetching Hotel"
         )
     }
 
-    suspend fun fetchHotelRooms(): HotelResponse<Rooms> {
+    suspend fun fetchHotelRooms(): uz.otamurod.domain.model.HotelResponse<uz.otamurod.domain.model.Rooms> {
         return getResponse(
             request = { apiService.getHotelRooms() },
             defaultErrorMessage = "Error fetching hotel rooms"
         )
     }
 
-    suspend fun fetchBookingInfo(): HotelResponse<Booking> {
+    suspend fun fetchBookingInfo(): uz.otamurod.domain.model.HotelResponse<uz.otamurod.domain.model.Booking> {
         return getResponse(
             request = { apiService.getBookingInfo() },
             defaultErrorMessage = "Error fetching room booking"

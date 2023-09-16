@@ -8,8 +8,8 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import uz.otamurod.data.Config
 import uz.otamurod.data.services.ApiService
+import uz.otamurod.buildsrc.Config
 
 @Module
 @InstallIn(SingletonComponent::class)
