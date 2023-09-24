@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".App"
+        android:name=".ui.App"
         android:hardwareAccelerated="true"
         android:largeHeap="true"
         android:usesCleartextTraffic="true"
@@ -18,7 +18,7 @@
         android:theme="@style/Theme.HotelManagement"
         tools:targetApi="31">
         <activity
-            android:name="uz.otamurod.presentation.ui.main.MainActivity"
+            android:name=".ui.MainActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true">
             <intent-filter>

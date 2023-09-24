@@ -65,13 +65,13 @@
 
 <!--
 <resources>
-<string name="app_name">HotelDto</string>
-<string name="hotel">HotelDto</string>
+<string name="app_name">Hotel</string>
+<string name="hotel">Hotel</string>
 <string name="sample_hotel_name">Steigenberger Makadi</string>
 <string name="order_paid">Order has been paid</string>
 <string name="order_processed">Your order has been processed</string>
 <string name="order_confirmation">Confirmation of order No. 104893 may take some time (from 1 hour to 24 hours). As soon as we receive a response from the tour operator, you will receive a notification by email.</string>
-<string name="booking">BookingDto</string>
+<string name="booking">Booking</string>
 <string name="buyer_info">Buyer Information</string>
 <string name="phone_number_sample">+7 (951) 555-99-00</string>
 <string name="email_sample">examplemail.000@mail.ru</string>
