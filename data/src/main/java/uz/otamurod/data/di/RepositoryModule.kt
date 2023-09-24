@@ -14,5 +14,5 @@ import javax.inject.Singleton
 abstract class RepositoryModule {
     @Binds
     @Singleton
-    internal abstract fun bindHotelRepository(hotelRepositoryImpl: HotelRepositoryImpl): uz.otamurod.domain.repository.HotelRepository
+    internal abstract fun bindHotelRepository(hotelRepositoryImpl: HotelRepositoryImpl): HotelRepository
 }

@@ -8,7 +8,7 @@ import uz.otamurod.domain.model.Tourist
 import uz.otamurod.hotelmanagement.R
 import uz.otamurod.hotelmanagement.databinding.ItemTouristBinding
 
-class TouristAdapter(private val items: ArrayList<uz.otamurod.domain.model.Tourist>) :
+class TouristAdapter(private val items: ArrayList<Tourist>) :
     RecyclerView.Adapter<TouristAdapter.ViewHolder>() {
 
     private val numbers = hashMapOf(
@@ -54,7 +54,7 @@ class TouristAdapter(private val items: ArrayList<uz.otamurod.domain.model.Touri
         }
     }
 
-    fun addItem(newItem: uz.otamurod.domain.model.Tourist) {
+    fun addItem(newItem: Tourist) {
         items.add(newItem)
         notifyItemInserted(items.size - 1)
     }

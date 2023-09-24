@@ -13,10 +13,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BookingViewModel @Inject constructor(
-    private val hotelUseCase: uz.otamurod.domain.usecase.HotelUseCase
+    private val hotelUseCase: HotelUseCase
 ) : ViewModel() {
-    private val _bookRoom = MutableLiveData<uz.otamurod.domain.model.HotelResponse<uz.otamurod.domain.model.Booking>>()
-    val bookRoom: LiveData<uz.otamurod.domain.model.HotelResponse<uz.otamurod.domain.model.Booking>> = _bookRoom
+    private val _bookRoom = MutableLiveData<HotelResponse<Booking>>()
+    val bookRoom: LiveData<HotelResponse<Booking>> = _bookRoom
 
     init {
         fetchBookingInfo()

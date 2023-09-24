@@ -24,18 +24,18 @@ abstract class BaseRemoteDataSource constructor(
     suspend fun <T> getResponse(
         request: suspend () -> Response<T>,
         defaultErrorMessage: String
-    ): uz.otamurod.domain.model.HotelResponse<T> {
+    ): HotelResponse<T> {
         return try {
             println("I'm working in thread ${Thread.currentThread().name}")
             val result = request.invoke()
             if (result.isSuccessful) {
-                return uz.otamurod.domain.model.HotelResponse.success(result.body())
+                return HotelResponse.success(result.body())
             } else {
                 val errorResponse = parseError(result)
-                uz.otamurod.domain.model.HotelResponse.error(errorResponse?.statusMessage ?: defaultErrorMessage, errorResponse)
+                HotelResponse.error(errorResponse?.statusMessage ?: defaultErrorMessage, errorResponse)
             }
         } catch (e: Throwable) {
-            uz.otamurod.domain.model.HotelResponse.error("Unknown Error", null)
+            HotelResponse.error("Unknown Error", null)
         }
     }
 
@@ -44,15 +44,15 @@ abstract class BaseRemoteDataSource constructor(
      * @param response the response of requested api
      * @return the ApiError of the request
      */
-    private fun parseError(response: Response<*>): uz.otamurod.domain.model.ApiError? {
+    private fun parseError(response: Response<*>): ApiError? {
         val converter =
-            retrofit.responseBodyConverter<uz.otamurod.domain.model.ApiError>(uz.otamurod.domain.model.ApiError::class.java, arrayOfNulls(0))
+            retrofit.responseBodyConverter<ApiError>(ApiError::class.java, arrayOfNulls(0))
         return try {
             response.errorBody()?.let {
                 converter.convert(it)
             }
         } catch (e: IOException) {
-            uz.otamurod.domain.model.ApiError()
+            ApiError()
         }
     }
 }

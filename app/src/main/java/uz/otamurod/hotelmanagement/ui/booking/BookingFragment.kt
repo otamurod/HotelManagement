@@ -32,7 +32,7 @@ class BookingFragment : Fragment() {
     private val viewModel: BookingViewModel by viewModels()
     private lateinit var binding: FragmentBookingBinding
     private lateinit var touristAdapter: TouristAdapter
-    private lateinit var tourists: ArrayList<uz.otamurod.domain.model.Tourist>
+    private lateinit var tourists: ArrayList<Tourist>
     private var snackBar: Snackbar? = null
     private var roomId: Int? = null
 
@@ -63,13 +63,13 @@ class BookingFragment : Fragment() {
 
         viewModel.bookRoom.observe(viewLifecycleOwner) { result ->
             val isLoading = when (result.status) {
-                uz.otamurod.domain.model.HotelResponse.Status.SUCCESS -> {
+                HotelResponse.Status.SUCCESS -> {
                     result.data?.let { booking ->
                         updateUI(booking)
                     }
                     false
                 }
-                uz.otamurod.domain.model.HotelResponse.Status.ERROR -> {
+                HotelResponse.Status.ERROR -> {
                     result.message?.let {
                         showError(it) {
                             viewModel.fetchBookingInfo()
@@ -77,7 +77,7 @@ class BookingFragment : Fragment() {
                     }
                     false
                 }
-                uz.otamurod.domain.model.HotelResponse.Status.LOADING -> true
+                HotelResponse.Status.LOADING -> true
             }
 
             if (isLoading) {
@@ -132,7 +132,7 @@ class BookingFragment : Fragment() {
                 val passportDueDate = passportValidityPeriod.text.toString()
 
                 if (name.isNotBlank() && surname.isNotBlank() && birthday.isNotBlank() && citizenship.isNotBlank() && passportNumber.isNotBlank() && passportDueDate.isNotBlank()) {
-                    val tourist = uz.otamurod.domain.model.Tourist(
+                    val tourist = Tourist(
                         name, surname, birthday, citizenship, passportNumber, passportDueDate
                     )
                     touristAdapter.addItem(tourist)
@@ -163,7 +163,7 @@ class BookingFragment : Fragment() {
                 if (name.isNotBlank() && surname.isNotBlank() && birthday.isNotBlank() && citizenship.isNotBlank() && passportNumber.isNotBlank() && passportDueDate.isNotBlank()) {
                     tourists = ArrayList()
 
-                    val tourist = uz.otamurod.domain.model.Tourist(
+                    val tourist = Tourist(
                         name, surname, birthday, citizenship, passportNumber, passportDueDate
                     )
                     tourists.add(tourist)
@@ -252,7 +252,7 @@ class BookingFragment : Fragment() {
         binding.shimmerLayout.visibility = View.GONE
     }
 
-    private fun updateUI(booking: uz.otamurod.domain.model.Booking) {
+    private fun updateUI(booking: Booking) {
         binding.apply {
             val name = booking.hotelName
             val address = booking.hotelAddress

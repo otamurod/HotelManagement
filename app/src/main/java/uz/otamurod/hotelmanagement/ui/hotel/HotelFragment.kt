@@ -46,13 +46,13 @@ class HotelFragment : Fragment() {
         startShimmerAnimation()
         viewModel.hotel.observe(viewLifecycleOwner) { result ->
             val isLoading = when (result.status) {
-                uz.otamurod.domain.model.HotelResponse.Status.SUCCESS -> {
+                HotelResponse.Status.SUCCESS -> {
                     result.data?.let { hotel ->
                         updateUI(hotel)
                     }
                     false
                 }
-                uz.otamurod.domain.model.HotelResponse.Status.ERROR -> {
+                HotelResponse.Status.ERROR -> {
                     result.message?.let {
                         showError(it) {
                             viewModel.fetchHotel()
@@ -60,7 +60,7 @@ class HotelFragment : Fragment() {
                     }
                     false
                 }
-                uz.otamurod.domain.model.HotelResponse.Status.LOADING -> true
+                HotelResponse.Status.LOADING -> true
             }
             if (isLoading) {
                 startShimmerAnimation()
@@ -96,7 +96,7 @@ class HotelFragment : Fragment() {
         binding.shimmerLayout.visibility = View.GONE
     }
 
-    private fun updateUI(hotel: uz.otamurod.domain.model.Hotel) {
+    private fun updateUI(hotel: Hotel) {
         val aboutTheHotel = hotel.aboutTheHotel
         val address = hotel.address
         roomId = hotel.id

@@ -26,7 +26,7 @@ import uz.otamurod.hotelmanagement.databinding.FragmentNumberBinding
 @AndroidEntryPoint
 class NumberFragment : Fragment() {
 
-    private lateinit var roomNumber: uz.otamurod.domain.model.Room
+    private lateinit var roomNumber: Room
     private val viewModel: NumberViewModel by viewModels()
     private lateinit var binding: FragmentNumberBinding
     private var snackBar: Snackbar? = null
@@ -54,13 +54,13 @@ class NumberFragment : Fragment() {
 
         viewModel.rooms.observe(viewLifecycleOwner) { result ->
             val isLoading = when (result.status) {
-                uz.otamurod.domain.model.HotelResponse.Status.SUCCESS -> {
+                HotelResponse.Status.SUCCESS -> {
                     result.data?.let { rooms ->
                         updateUI(rooms)
                     }
                     false
                 }
-                uz.otamurod.domain.model.HotelResponse.Status.ERROR -> {
+                HotelResponse.Status.ERROR -> {
                     result.message?.let {
                         showError(it) {
                             viewModel.fetchHotelRooms()
@@ -68,7 +68,7 @@ class NumberFragment : Fragment() {
                     }
                     false
                 }
-                uz.otamurod.domain.model.HotelResponse.Status.LOADING -> true
+                HotelResponse.Status.LOADING -> true
             }
 
             if (isLoading) {
@@ -109,7 +109,7 @@ class NumberFragment : Fragment() {
         binding.shimmerLayout.visibility = View.GONE
     }
 
-    private fun updateUI(rooms: uz.otamurod.domain.model.Rooms) {
+    private fun updateUI(rooms: Rooms) {
         roomId.let {
 
             for (room in rooms.rooms) {

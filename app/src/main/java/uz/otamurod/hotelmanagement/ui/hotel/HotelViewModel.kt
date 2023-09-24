@@ -15,8 +15,8 @@ import javax.inject.Inject
 class HotelViewModel @Inject constructor(
     private val hotelUseCase: HotelUseCase
 ) : ViewModel() {
-    private val _hotel = MutableLiveData<uz.otamurod.domain.model.HotelResponse<uz.otamurod.domain.model.Hotel>>()
-    val hotel: LiveData<uz.otamurod.domain.model.HotelResponse<uz.otamurod.domain.model.Hotel>> = _hotel
+    private val _hotel = MutableLiveData<HotelResponse<Hotel>>()
+    val hotel: LiveData<HotelResponse<Hotel>> = _hotel
 
     init {
         fetchHotel()
