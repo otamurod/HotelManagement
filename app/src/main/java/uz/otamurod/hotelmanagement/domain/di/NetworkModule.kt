@@ -1,4 +1,4 @@
-package uz.otamurod.hotelmanagement.domain.di
+package uz.otamurod.data.di
 
 import dagger.Module
 import dagger.Provides
@@ -9,7 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import uz.otamurod.data.Config
-import uz.otamurod.domain.services.ApiService
+import uz.otamurod.data.services.ApiService
 
 @Module
 @InstallIn(SingletonComponent::class)

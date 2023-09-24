@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HotelViewModel @Inject constructor(
-    private val hotelUseCase: uz.otamurod.domain.usecase.HotelUseCase
+    private val hotelUseCase: HotelUseCase
 ) : ViewModel() {
     private val _hotel = MutableLiveData<HotelResponse<Hotel>>()
     val hotel: LiveData<HotelResponse<Hotel>> = _hotel
