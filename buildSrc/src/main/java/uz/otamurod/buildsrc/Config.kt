@@ -1,4 +1,4 @@
-package buildSrc
+package buildsrc
 
 object Config {
     const val applicationId:String = "uz.otamurod.hotelmanagement"

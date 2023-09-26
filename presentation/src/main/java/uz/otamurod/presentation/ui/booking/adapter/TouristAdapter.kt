@@ -1,4 +1,4 @@
-package uz.otamurod.presentation.adapter
+package uz.otamurod.presentation.ui.booking.adapter
 
 import android.view.LayoutInflater
 import android.view.View

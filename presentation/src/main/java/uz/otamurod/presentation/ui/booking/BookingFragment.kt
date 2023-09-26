@@ -18,12 +18,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import uz.otamurod.domain.api.model.Booking
 import uz.otamurod.domain.model.Tourist
 import uz.otamurod.domain.util.DataState
-import uz.otamurod.presentation.adapter.TouristAdapter
+import uz.otamurod.presentation.ui.booking.adapter.TouristAdapter
 import uz.otamurod.presentation.R
 import uz.otamurod.presentation.databinding.FragmentBookingBinding
-import uz.otamurod.presentation.utils.DateTextWatcher
-import uz.otamurod.presentation.utils.EmailValidatorTextWatcher
-import uz.otamurod.presentation.utils.PhoneTextFormatter
+import uz.otamurod.presentation.ui.booking.utils.DateTextWatcher
+import uz.otamurod.presentation.ui.booking.utils.EmailValidatorTextWatcher
+import uz.otamurod.presentation.ui.booking.utils.PhoneTextFormatter
 import java.util.*
 
 @AndroidEntryPoint

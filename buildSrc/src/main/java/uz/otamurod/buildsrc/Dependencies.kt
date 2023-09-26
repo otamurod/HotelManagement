@@ -1,4 +1,4 @@
-package buildSrc
+package buildsrc
 
 object Dependencies {
     object AndroidX {

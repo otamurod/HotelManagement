@@ -1,4 +1,4 @@
-package buildSrc.plugins
+package buildsrc.plugins
 
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project

@@ -1,7 +1,7 @@
-package buildSrc.plugins
+package buildsrc.plugins
 
 import com.android.build.gradle.BaseExtension
-import buildSrc.Config
+import buildsrc.Config
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project

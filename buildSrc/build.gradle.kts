@@ -32,11 +32,11 @@ gradlePlugin {
     plugins {
         create("android-module") {
             id = "android-module"
-            implementationClass = "buildSrc.plugins.AndroidModulePlugin"
+            implementationClass = "buildsrc.plugins.AndroidModulePlugin"
         }
         create("kotlin-module") {
             id = "kotlin-module"
-            implementationClass = "buildSrc.plugins.KotlinModulePlugin"
+            implementationClass = "buildsrc.plugins.KotlinModulePlugin"
         }
     }
 }

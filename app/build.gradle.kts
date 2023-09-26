@@ -1,5 +1,5 @@
-import buildSrc.Config
-import buildSrc.Dependencies
+import buildsrc.Config
+import buildsrc.Dependencies
 
 plugins {
     id("com.android.application")
@@ -28,10 +28,6 @@ android {
             )
         }
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -49,30 +45,11 @@ dependencies {
     // AndroidX
     implementation(Dependencies.AndroidX.coreKtx)
     implementation(Dependencies.AndroidX.appCompat)
-    implementation(Dependencies.AndroidX.material)
-    implementation(Dependencies.AndroidX.constraintLayout)
-    implementation(Dependencies.AndroidX.legacySupport)
-    implementation(Dependencies.AndroidX.Lifecycle.lifecycleLiveDataKtx)
-    implementation(Dependencies.AndroidX.Lifecycle.lifecycleViewModelKtx)
-
-    // Navigation
-    implementation(Dependencies.AndroidX.Navigation.fragmentKtx)
-    implementation(Dependencies.AndroidX.Navigation.uiKtx)
-
-    // LiveData
-    implementation(Dependencies.AndroidX.Lifecycle.lifecycleLiveDataKtx)
-
-    // ViewModel
-    implementation(Dependencies.AndroidX.Lifecycle.lifecycleViewModelKtx)
 
     // Hilt Dependencies
     implementation(Dependencies.Hilt.hiltAndroid)
     implementation(Dependencies.Hilt.hiltNavigationFragment)
     ksp(Dependencies.Hilt.hiltCompiler)
-
-    // Kotlin Coroutines
-    implementation(Dependencies.Coroutines.coroutinesCore)
-    implementation(Dependencies.Coroutines.coroutinesAndroid)
 
     // Retrofit
     implementation(Dependencies.Retrofit.retrofit)
@@ -81,22 +58,4 @@ dependencies {
     // Okhttp3 Dependency
     implementation(Dependencies.Okhttp3.okhttp)
     implementation(Dependencies.Okhttp3.loggingInterceptor)
-
-    // ViewPager 2
-    implementation(Dependencies.ViewPager2.viewPager2)
-
-    // Glide
-    implementation(Dependencies.Glide.glide)
-    ksp(Dependencies.Glide.glideCompiler)
-
-    // Picasso
-    implementation(Dependencies.Picasso.picasso)
-
-    // CarouselView
-    implementation(Dependencies.CarouselView.carouselView)
-
-    implementation(Dependencies.RoundedImageView.roundedImageView)
-
-    // Shimmer effect
-    implementation(Dependencies.Shimmer.shimmer)
 }

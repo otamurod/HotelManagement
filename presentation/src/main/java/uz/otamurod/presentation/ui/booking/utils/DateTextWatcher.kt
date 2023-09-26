@@ -1,4 +1,4 @@
-package uz.otamurod.presentation.utils
+package uz.otamurod.presentation.ui.booking.utils
 
 import android.text.Editable
 import android.text.TextWatcher

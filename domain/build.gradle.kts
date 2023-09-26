@@ -1,4 +1,4 @@
-import buildSrc.Dependencies
+import buildsrc.Dependencies
 
 plugins {
     id("java-library")

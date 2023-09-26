@@ -1,4 +1,4 @@
-package uz.otamurod.presentation.utils
+package uz.otamurod.presentation.ui.booking.utils
 
 import android.annotation.SuppressLint
 import android.text.Editable

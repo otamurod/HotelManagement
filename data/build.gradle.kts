@@ -1,5 +1,5 @@
-import buildSrc.Config
-import buildSrc.Dependencies
+import buildsrc.Config
+import buildsrc.Dependencies
 
 plugins {
     id("com.android.library")
