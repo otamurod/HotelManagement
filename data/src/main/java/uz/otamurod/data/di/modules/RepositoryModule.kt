@@ -1,4 +1,4 @@
-package uz.otamurod.hotelmanagement.di.modules
+package uz.otamurod.data.di.modules
 
 import dagger.Module
 import dagger.Provides

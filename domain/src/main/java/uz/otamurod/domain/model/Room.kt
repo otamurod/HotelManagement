@@ -1,4 +1,4 @@
-package uz.otamurod.domain.api.model
+package uz.otamurod.domain.model
 
 data class Room(
     val id: Int,

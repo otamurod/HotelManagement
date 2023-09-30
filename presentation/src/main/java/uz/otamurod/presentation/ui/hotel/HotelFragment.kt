@@ -14,7 +14,7 @@ import com.makeramen.roundedimageview.RoundedTransformationBuilder
 import com.squareup.picasso.Picasso
 import com.synnapps.carouselview.ImageListener
 import dagger.hilt.android.AndroidEntryPoint
-import uz.otamurod.domain.api.model.Hotel
+import uz.otamurod.domain.model.Hotel
 import uz.otamurod.domain.util.DataState
 import uz.otamurod.presentation.R
 import uz.otamurod.presentation.databinding.FragmentHotelBinding

@@ -14,18 +14,11 @@ android {
     defaultConfig {
         applicationId = Config.applicationId
         namespace = Config.packageNameApp
-
-        buildConfigField("String", "BASE_URL", "\"https://run.mocky.io\"")
     }
 
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
         }
     }
 }

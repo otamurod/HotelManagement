@@ -14,8 +14,9 @@ android {
     defaultConfig {
         namespace = Config.packageNameLibData
 
+        buildConfigField("String", "BASE_URL", "\"https://run.mocky.io\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 }
 
@@ -35,4 +36,8 @@ dependencies {
     implementation(Dependencies.Hilt.hiltAndroid)
     implementation(Dependencies.Hilt.hiltNavigationFragment)
     ksp(Dependencies.Hilt.hiltCompiler)
+
+    // Okhttp3 Dependency
+    implementation(Dependencies.Okhttp3.okhttp)
+    implementation(Dependencies.Okhttp3.loggingInterceptor)
 }

@@ -6,9 +6,9 @@ import uz.otamurod.data.network.api.HotelApi
 import uz.otamurod.data.network.mapper.BookingResponseMapper
 import uz.otamurod.data.network.mapper.HotelResponseMapper
 import uz.otamurod.data.network.mapper.RoomsResponseMapper
-import uz.otamurod.domain.api.model.Booking
-import uz.otamurod.domain.api.model.Hotel
-import uz.otamurod.domain.api.model.Rooms
+import uz.otamurod.domain.model.Booking
+import uz.otamurod.domain.model.Hotel
+import uz.otamurod.domain.model.Rooms
 import uz.otamurod.domain.util.DataState
 import javax.inject.Inject
 

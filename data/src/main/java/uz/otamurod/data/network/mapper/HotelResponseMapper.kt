@@ -1,7 +1,7 @@
 package uz.otamurod.data.network.mapper
 
 import uz.otamurod.data.network.api.entities.HotelResponse as HotelDto
-import uz.otamurod.domain.api.model.Hotel as HotelBo
+import uz.otamurod.domain.model.Hotel as HotelBo
 
 object HotelResponseMapper {
     class Hotel internal constructor(private val dto: HotelDto){

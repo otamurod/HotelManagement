@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import uz.otamurod.domain.api.model.Rooms
+import uz.otamurod.domain.model.Rooms
 import uz.otamurod.domain.interactor.HotelInteractorApi
 import uz.otamurod.domain.util.DataState
 import javax.inject.Inject

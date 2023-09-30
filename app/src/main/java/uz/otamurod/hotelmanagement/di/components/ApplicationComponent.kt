@@ -2,10 +2,10 @@ package uz.otamurod.hotelmanagement.di.components
 
 import dagger.BindsInstance
 import dagger.Component
+import uz.otamurod.data.di.modules.InteractorModule
+import uz.otamurod.data.di.modules.NetworkModule
+import uz.otamurod.data.di.modules.RepositoryModule
 import uz.otamurod.hotelmanagement.App
-import uz.otamurod.hotelmanagement.di.modules.InteractorModule
-import uz.otamurod.hotelmanagement.di.modules.NetworkModule
-import uz.otamurod.hotelmanagement.di.modules.RepositoryModule
 import uz.otamurod.presentation.ui.MainActivity
 import javax.inject.Singleton
 

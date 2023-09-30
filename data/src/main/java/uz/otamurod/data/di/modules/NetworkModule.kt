@@ -1,4 +1,4 @@
-package uz.otamurod.hotelmanagement.di.modules
+package uz.otamurod.data.di.modules
 
 import dagger.Module
 import dagger.Provides
@@ -8,8 +8,8 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import uz.otamurod.data.BuildConfig
 import uz.otamurod.data.network.api.HotelApi
-import uz.otamurod.hotelmanagement.BuildConfig
 
 @Module
 @InstallIn(SingletonComponent::class)

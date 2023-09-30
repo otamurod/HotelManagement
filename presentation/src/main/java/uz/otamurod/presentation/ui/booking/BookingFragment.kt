@@ -15,7 +15,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import uz.otamurod.domain.api.model.Booking
+import uz.otamurod.domain.model.Booking
 import uz.otamurod.domain.model.Tourist
 import uz.otamurod.domain.util.DataState
 import uz.otamurod.presentation.ui.booking.adapter.TouristAdapter
