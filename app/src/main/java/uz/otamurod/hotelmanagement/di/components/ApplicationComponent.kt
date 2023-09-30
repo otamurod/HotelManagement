@@ -2,15 +2,15 @@ package uz.otamurod.hotelmanagement.di.components
 
 import dagger.BindsInstance
 import dagger.Component
-import uz.otamurod.data.di.NetworkModule
-import uz.otamurod.data.di.RepositoryModule
-import uz.otamurod.domain.di.UseCaseModule
-import uz.otamurod.hotelmanagement.ui.App
-import uz.otamurod.hotelmanagement.ui.MainActivity
+import uz.otamurod.data.di.modules.InteractorModule
+import uz.otamurod.data.di.modules.NetworkModule
+import uz.otamurod.data.di.modules.RepositoryModule
+import uz.otamurod.hotelmanagement.App
+import uz.otamurod.presentation.ui.MainActivity
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [NetworkModule::class, RepositoryModule::class, UseCaseModule::class])
+@Component(modules = [NetworkModule::class, RepositoryModule::class, InteractorModule::class])
 interface ApplicationComponent {
     @Component.Factory
     interface Factory {
