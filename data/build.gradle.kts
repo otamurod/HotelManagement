@@ -15,8 +15,6 @@ android {
         namespace = Config.packageNameLibData
 
         buildConfigField("String", "BASE_URL", "\"https://run.mocky.io\"")
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 }
 
