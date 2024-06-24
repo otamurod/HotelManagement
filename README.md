@@ -25,3 +25,11 @@ Multi-module Android app built on top of Clean Architecture using MVVM design pa
 ## Video Demo
 
 [Link to Video Demo](https://youtu.be/r1hD6IBJ5vo)
+
+# Coding Time
+
+<p>
+  <a href="https://wakatime.com/badge/user/018af96f-cc66-4e21-a00c-028b0e9f72bb/project/018b1966-22aa-4d6f-93c6-9475e57e8f1c">
+    <img src="https://wakatime.com/badge/user/018af96f-cc66-4e21-a00c-028b0e9f72bb/project/018b1966-22aa-4d6f-93c6-9475e57e8f1c.svg?style=plastic" alt="wakatime">
+  </a>
+</p>
